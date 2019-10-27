@@ -2,6 +2,17 @@
 <html>
   <head>
     <title>3D Test</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.full-height {
+  height: 100%;
+  background: yellow;
+}
+</style>
    <script type="module"
   src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer.js">
 </script>
@@ -10,7 +21,9 @@
   src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
 </script>
   </head>
+
   <body>
-    <model-viewer src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/3D_test.usdz" magic-leap unstable-webxr></model-viewer>
+<div class="full-height"><model-viewer src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/3D_test.usdz" magic-leap unstable-webxr></model-viewer></div>
+    
   </body>
 </html>
