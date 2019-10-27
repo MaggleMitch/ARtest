@@ -9,8 +9,8 @@ html, body {
 }
 
 .full-height {
-  height: 100%;
-  background: yellow;
+  min-height: 100%; 
+  background: red;
 }
 </style>
    <script type="module"
@@ -23,7 +23,35 @@ html, body {
   </head>
 
   <body>
-<div class="full-height"><model-viewer src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/3D_test.usdz" magic-leap unstable-webxr></model-viewer></div>
+
+
+
+
+
+ <div class="sample">
+    <div id="demo-container-1" class="demo"></div>
+    <div class="content">
+      <div class="wrapper">
+
+        <a class="lockup" href="../index.html"><div class="icon-button icon-modelviewer-black"></div>
+        <example-snippet stamp-to="demo-container-1" highlight-as="html">
+          <template>
+<model-viewer src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap unstable-webxr></model-viewer>
+          </template>
+        </example-snippet>
+
+       
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
     
   </body>
 </html>
