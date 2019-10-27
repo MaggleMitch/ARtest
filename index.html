@@ -32,7 +32,12 @@ width: 100%;
 
 <div class="full-height">
 
-<model-viewer class="full-height" src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/3D_test.usdz" magic-leap unstable-webxr></model-viewer>
+
+<model-viewer class="full-height" ar camera-controls ios-src="assets/3D_test.usdz" src="assets/Astronaut.glb" background-color="#222" alt="A 3D model of an astronaut">
+      <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+          👋 Activate AR
+      </button>
+  </model-viewer>
 
 </div>
 
