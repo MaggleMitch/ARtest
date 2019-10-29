@@ -45,31 +45,22 @@ width: 100%;
   src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
 </script>
 
+
+<input id="backbuttonstate" type="text" value="0" style="display:none;" />
+
 <script>
-
-            function pageShown(evt){
-                if (evt.persisted) {
-                    alert("pageshow event handler called.  The page was just restored from the Page Cache (eg. From the Back button.");
-					window.open("https://www.google.com");
-                } else {
-                    alert("Howdy. Page load.");
-					document.getElementById('btn').click();
-                }
-            }
-
-            function pageHidden(evt){
-                if (evt.persisted) {
-                    alert("pagehide event handler called.  The page was suspended and placed into the Page Cache.");
-					window.open("https://www.google.com");
-                } else {
-                    alert("pagehide event handler called for page destruction.  This is the same as the unload event.");
-                }
-            }
-
-            window.addEventListener("pageshow", pageShown, false);
-            window.addEventListener("pagehide", pageHidden, false);
-
- </script>
+document.addEventListener('DOMContentLoaded', function () {
+   var ibackbutton = document.getElementById("backbuttonstate");
+   if (ibackbutton.value == "0") {
+     // Page has been loaded for the first time - Set marker
+     ibackbutton.value = "1";
+     alert('First time load');
+   } else {
+     // Back button has been fired.. Do Something different..
+     alert('Previously loaded - Returned from Back button');
+   }
+}, false);
+</script>
 
 
   </head>
@@ -95,4 +86,6 @@ width: 100%;
 
     
   </body>
+
+
 </html>
