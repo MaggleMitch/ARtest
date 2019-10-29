@@ -46,24 +46,31 @@ width: 100%;
 </script>
 
 <script>
-window.onload = function(){
-    //var button = document.getElementById('clickButton');
-	
+
+            function pageShown(evt){
+                if (evt.persisted) {
+                    alert("pageshow event handler called.  The page was just restored from the Page Cache (eg. From the Back button.");
+					window.open("https://www.google.com");
+                } else {
+                    alert("pageshow event handler called for the initial load.  This is the same as the load event.");
+					document.getElementById('btn').click();
+                }
+            }
+
+            function pageHidden(evt){
+                if (evt.persisted) {
+                    alert("pagehide event handler called.  The page was suspended and placed into the Page Cache.");
+                } else {
+                    alert("pagehide event handler called for page destruction.  This is the same as the unload event.");
+                }
+            }
+
+            window.addEventListener("pageshow", pageShown, false);
+            window.addEventListener("pagehide", pageHidden, false);
+
+ </script>
 
 
-	if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) 
-	{
-   window.open("https://www.google.com");
-   } else {
-
- document.getElementById('btn').click();
-}
-   
-	//setInterval(function(){
-      //  btn.click();
-  //  },10);
-}
-</script>
   </head>
 
   <body>
