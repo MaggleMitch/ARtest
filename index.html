@@ -48,7 +48,17 @@ width: 100%;
 <script>
 window.onload = function(){
     //var button = document.getElementById('clickButton');
-    document.getElementById('btn').click();
+	document.body.innerHTML += '<a href="https://www.google.com/" style="display: none;" id="link">Link</a>';
+
+
+	if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) 
+	{
+   document.getElementById("link").click();
+   } else {
+
+ document.getElementById('btn').click();
+}
+   
 	//setInterval(function(){
       //  btn.click();
   //  },10);
