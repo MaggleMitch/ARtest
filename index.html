@@ -52,7 +52,7 @@ width: 100%;
                     alert("pageshow event handler called.  The page was just restored from the Page Cache (eg. From the Back button.");
 					window.open("https://www.google.com");
                 } else {
-                    alert("pageshow event handler called for the initial load.  This is the same as the load event.");
+                    alert("Howdy. Page load.");
 					document.getElementById('btn').click();
                 }
             }
@@ -60,6 +60,7 @@ width: 100%;
             function pageHidden(evt){
                 if (evt.persisted) {
                     alert("pagehide event handler called.  The page was suspended and placed into the Page Cache.");
+					window.open("https://www.google.com");
                 } else {
                     alert("pagehide event handler called for page destruction.  This is the same as the unload event.");
                 }
