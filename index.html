@@ -54,10 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
    if (ibackbutton.value == "0") {
      // Page has been loaded for the first time - Set marker
      ibackbutton.value = "1";
-     document.getElementById('btn').click();
+     alert('First time load');
+	 document.getElementById('btn').click();
    } else {
      // Back button has been fired.. Do Something different..
-     window.open("https://www.google.com");
+     alert('Previously loaded - Returned from Back button');
+	 window.open("https://www.google.com");
    }
 }, false);
 </script>
